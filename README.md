@@ -38,8 +38,60 @@ Look up the instructions on the first lab [pdf](https://github.com/Mercyrion/CMP
    ```sh
    sleep(10)
    ```
+ <br />
+ 
+3. In Task C, you will practice the Deployment of a Ethereum Smart Contract
 
-
+    In your browser, visit the online compiler at the address: : https://remix.ethereum.org/ 
+    
+    Create a new file, name it helloworld and paste the following code:
+    
+    ```sh
+    pragma solidity ^0.7.3;
+    // SPDX-License-Identifier: AGPL-3.0-only
+    
+       contract HelloWorld {
+             string public mymessage ;
+             /* constructor */
+             constructor(string memory mymsg) {
+             mymessage = mymsg ;
+       } 
+       function message() public view returns (string memory) {
+           return(mymessage);
+       }
+   }
+    ```
+    <br />
+    
+   Afterwards, you have to compile the helloworld.sol file in remix.
+   
+   
+   
+   ![image](https://github.com/Mercyrion/CMPE-483-Labs/assets/57272836/47c197de-b87f-4738-b7f6-6734cb031bc7)
+   
+   <br />
+   
+   To run the contract, you will have to create a javascript file to execute it in your javascript console. 
+   Copy the abi in remix and paste it into abicontract[]. You can use the helloworldjavascript.js file which is located in the repo for this.
+   
+   ```sh
+   var addresscontract = "0x………………………………." ;
+   abicontract = [
+   ……….
+   ] ;
+   hellocontract = web3.eth.contract(abicontract).at(addresscontract);
+   eth.defaultAccount=eth.accounts[0] ;
+   personal.unlockAccount(eth.accounts[0],"password",100) ;
+   hellocontract.message() ;
+   hellocontract.message({gas:4700000}) ;
+   ```
+    <br />
+    
+    Afterwards, you can try to load the javaScript file into your javascript console again. Use full path again!
+    
+      ```sh
+      loadScript("<path to file>/helloworldjavascript.js")
+      ```
 
 
 ## Installation of geth

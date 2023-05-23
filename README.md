@@ -12,7 +12,34 @@ First lab aimed to:
 Look up the instructions on the first lab [pdf](https://github.com/Mercyrion/CMPE-483-Labs/blob/main/1.%20Lab/lab01.pdf)
 
 ## Second Lab
-First follow the [instructions](#installation-of-geth) below to install geth and set up the developer mode
+1. For the first task A, you have to follow the [instructions](#installation-of-geth) below to install geth and set up the developer mode.
+
+2. For the second task B, you can test your geth installation with the following commands:
+    * ```sh
+      eth.getBalance(eth.accounts[0])
+      ```
+    * ```sh
+      eth.defaultAccount=eth.coinbase
+      ```
+    * ```sh
+      eth.sendTransaction({from:eth.coinbase, to:
+      "<Adress of a created Account>", value:web3.toWei(3, "ether"),
+      gas:90000000, gasPrice: 200})
+      ```
+    * ```sh
+      personal.unlockAccount(eth.accounts[0);
+      ```
+   Afterwards, you can try to load the javaScript file named rndsend.js into your javascript console. Herefore, you should use the full path
+      ```sh
+      loadScript("<path to file>/rndsend.js")
+      ```
+   Now you can call every function inside the rndsend.js function, e.g.
+   
+   ```sh
+   sleep(10)
+   ```
+
+
 
 
 ## Installation of geth
@@ -50,9 +77,18 @@ You find the full instructions on the [Developer page](https://geth.ethereum.org
     geth attach [path to geth.ipc]
     ```
     the path should be the same as the path us used to start geth. You can also find the file in the folder you created in the command before
-     <br />
+    
+  <br />
     
 3. Now the javacsript console is running. You can test it and display the existing accounts using eth.accounts:
     ```sh
     eth.accounts
     ```
+     <br />
+4. You can create a new account using Clef. Open up a new Terminal. A new account is then generated using the newaccount function on the command line:
+
+      ```sh
+      clef newaccount --keystore <path-to-keystore>
+      ```
+      
+    

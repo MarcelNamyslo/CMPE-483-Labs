@@ -1,5 +1,20 @@
 # CMPE-483-Labs
 
+## First Lab
+First lab aimed to:
+
+   1. set-up your browser to use the three Ethereum based blockchains: Bloxberg and Ava Fuji Test and Polygon Matic Mumbai test chains.
+    
+   2. to obtain free ethers from faucets and
+    
+   3. to practice sending ethers and exploring your transactions and addresses in the block explorers. 
+   
+Look up the instructions on the first lab [pdf](https://github.com/Mercyrion/CMPE-483-Labs/blob/main/1.%20Lab/lab01.pdf)
+
+## Second Lab
+First follow the [instructions](#installation-of-geth) below to install geth and set up the developer mode
+
+
 ## Installation of geth
 
 Arch Linux via pacman
